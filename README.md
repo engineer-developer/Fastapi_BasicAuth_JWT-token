@@ -30,13 +30,13 @@ If input data is valid, will be created jwt-token and placed it in COOKIES.
 >
 >* To install dependencies in project dir run shell-command:
 >
->```
+>```bash
 >POETRY_VIRTUALENVS_IN_PROJECT=true poetry shell
 >```
 >
 >* then run next command:
 >
->```
+>```bash
 >poetry install
 >```
 
@@ -46,7 +46,7 @@ If input data is valid, will be created jwt-token and placed it in COOKIES.
 >
 >* For launch postgres database in docker container run command:
 >
->```
+>```bash
 >docker compose up -d
 >```
 
@@ -60,7 +60,8 @@ If input data is valid, will be created jwt-token and placed it in COOKIES.
 >##### You can run project with shell-command:
 >
 >```bash
->python src/loader.py
+>cd ./src && 
+>uvicorn "loader:app"
 >```
 
 ### Logging as super_admin
