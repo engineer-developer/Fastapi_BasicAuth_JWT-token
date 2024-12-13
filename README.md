@@ -1,6 +1,12 @@
 # Fastapi authentication
 
-## Authentication type: <i>"Form based auth"</i>
+| Property               |       Value       |
+|:-----------------------|:-----------------:|
+| Authentication type    |  Form based auth  |
+| Credentials            | email & password  |
+| Access-token type      |        JWT        | 
+| Access-token placed in |      COOKIE       | 
+
 
 <h4><i>
 For authentication uses form, where user input username and password. <br>
@@ -53,7 +59,7 @@ If input data is valid, will be created jwt-token and placed it in COOKIES.
 ### Run project
 >##### You can run project with shell-command:
 >
->```
+>```bash
 >python src/loader.py
 >```
 
@@ -65,8 +71,4 @@ If input data is valid, will be created jwt-token and placed it in COOKIES.
 ### Tests
 ><p> The tests are implemented with pytest. <br>
 > To be able to run tests you should have database with name "*pytest_db*".</p>
->
->* Example SQL commands to create database:
->```
->CREATE DATABASE "pytest_db";
->```
+

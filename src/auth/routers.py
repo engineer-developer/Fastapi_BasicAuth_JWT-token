@@ -37,7 +37,7 @@ async def create_token(
     incorrect_credentials_exception = HTTPException(
         status_code=status.HTTP_400_BAD_REQUEST,
         detail="Incorrect username or password",
-        headers={"WWW-Authenticate": "Basic_Form"},
+        headers={"WWW-Authenticate": "Form"},
     )
 
     email = form_data.email
