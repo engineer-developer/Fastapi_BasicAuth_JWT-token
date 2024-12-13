@@ -10,7 +10,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from auth.schemas import TokenData, pwd_context
 from config.config import settings
 from dao.models import Role, User
-from database.database import CommonAsyncScopedSession, CommonAsyncSession
+from database.database import CommonAsyncScopedSession
 from dto.users.utils import fetch_user_by_email
 
 
@@ -86,7 +86,7 @@ async def get_current_user(
     credentials_exception = HTTPException(
         status_code=status.HTTP_401_UNAUTHORIZED,
         detail="Could not validate credentials",
-        headers={"WWW-Authenticate": "Basic-Form"},
+        headers={"WWW-Authenticate": "Form"},
     )
     try:
         payload = jwt.decode(
@@ -98,7 +98,7 @@ async def get_current_user(
         if user_email is None:
             raise credentials_exception
         token_data = TokenData(user_email=user_email)
-    except (InvalidTokenError, ExpiredSignatureError):
+    except InvalidTokenError:
         raise credentials_exception
 
     current_user = await fetch_user_by_email(
