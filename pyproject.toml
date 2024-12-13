@@ -1,0 +1,57 @@
+[tool.poetry]
+name = "fastapi_basic_auth_jwt-token"
+version = "0.2.0"
+description = ""
+authors = ["Suslov Alexey <suslov.lexx@gmail.com>"]
+readme = "README.md"
+packages = [{ include = "/src" }]
+package-mode = false
+
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = {extras = ["all"], version = "^0.115.5"}
+alembic = "^1.14.0"
+sqlalchemy = { extras = ["asyncio"], version = "^2.0.36" }
+asyncpg = "^0.30.0"
+pyjwt = "^2.10.1"
+passlib = {extras = ["bcrypt"], version = "^1.7.4"}
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.10.0"
+isort = "^5.13.2"
+mypy = "^1.13.0"
+flake8 = "^7.1.1"
+pytest = "^8.3.3"
+pytest-asyncio = "^0.24.0"
+pytest-dotenv = "^0.5.2"
+pytest-cov = "^6.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.pytest.ini_options]
+pythonpath = [".", "src"]
+env_files = ["src/.test.env"]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "session"
+filterwarnings = [
+    "ignore:'crypt' is deprecated",
+]
+
+
+[tool.mypy]
+warn_return_any = true
+warn_unused_configs = true
+disable_error_code = [
+    "call-arg",
+    "attr-defined",
+]
+
+
+[tool.isort]
+profile = "black"
