@@ -5,7 +5,7 @@
 | Authentication type    |  Form based auth  |
 | Credentials            | email & password  |
 | Access-token type      |        JWT        | 
-| Access-token placed in |      COOKIE       | 
+| Access-token stored in |      COOKIE       | 
 
 
 <h4><i>
@@ -31,14 +31,10 @@ If input data is valid, will be created jwt-token and placed it in COOKIES.
 >* To install dependencies in project dir run shell-command:
 >
 >```bash
->POETRY_VIRTUALENVS_IN_PROJECT=true poetry shell
+>POETRY_VIRTUALENVS_IN_PROJECT=true poetry shell &&
+>poetry lock
 >```
->
->* then run next command:
->
->```bash
->poetry install
->```
+
 
 ### Prepare database
 
