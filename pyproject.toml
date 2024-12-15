@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "fastapi_basic_auth_jwt-token"
+name = "Fastapi_Form-based-auth"
 version = "0.2.0"
 description = ""
 authors = ["Alex"]
