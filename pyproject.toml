@@ -2,7 +2,7 @@
 name = "fastapi_basic_auth_jwt-token"
 version = "0.2.0"
 description = ""
-authors = ["Suslov Alexey <suslov.lexx@gmail.com>"]
+authors = ["Alex"]
 readme = "README.md"
 packages = [{ include = "/src" }]
 package-mode = false
